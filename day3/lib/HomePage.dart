@@ -36,15 +36,24 @@ class Homepage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              width: 100,
-              height: 100,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(200),
-                color: const Color.fromARGB(255, 255, 120, 79),
+            CircleAvatar(
+              backgroundColor: Colors.black,
+              radius: 60,
+              child: CircleAvatar(
+                backgroundImage: AssetImage("Images/WIN_20251029_14_04_40_Pro.jpg" ),
+                radius: 55.25,
               ),
-              child: Icon(Icons.person, color: CupertinoColors.white, size: 80),
             ),
+            
+            // Container(
+            //   width: 100,
+            //   height: 100,
+            //   decoration: BoxDecoration(
+            //     borderRadius: BorderRadius.circular(200),
+            //     color: const Color.fromARGB(255, 255, 120, 79),
+            //   ),
+            //   child: Icon(Icons.person, color: CupertinoColors.white, size: 80),
+            // ),
             Text(
               "Eng. Youssef Gad",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
