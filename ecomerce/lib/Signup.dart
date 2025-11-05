@@ -1,21 +1,22 @@
-import 'package:customwidget_formfiled/Custom_FormField.dart';
-import 'package:customwidget_formfiled/SignUp.dart';
-import 'package:flutter/foundation.dart';
+import 'package:ecomerce/HomePage.dart';
+import 'package:ecomerce/Login.dart';
+import 'package:ecomerce/custom_form.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class Signup extends StatelessWidget {
+  const Signup({super.key});
 
   @override
   Widget build(BuildContext context) {
     final Formkey = GlobalKey<FormState>();
+    final namecontroller = TextEditingController();
     final emailcontroller = TextEditingController();
     final passcontroller = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
         centerTitle: true,
-        title: Text("Login Page" , style: TextStyle(fontSize: 20 , fontWeight: FontWeight.bold ,color: Colors.white ),),
+        title: Text("Signup Page" , style: TextStyle(fontSize: 20 , fontWeight: FontWeight.bold ,color: Colors.white ),),
       ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -31,7 +32,18 @@ class Login extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 20,right: 20,top: 10),
                 child: Column(
                   children: [
-                    
+                    TextCustomForm(
+                      icon: Icons.email,
+                      label: "Full Name",
+                      
+                      validator: (value) {
+                        if(value!.isEmpty|| value == ""){
+                          return "PLease Enter Name Bec IT's Required";
+                        }
+                        return null;
+                      },
+                      controller: namecontroller,
+                    ),
                     SizedBox(height: 20,),
                     TextCustomForm(
                       icon: Icons.email,
@@ -67,30 +79,21 @@ class Login extends StatelessWidget {
                     SizedBox(height: 30,),
                     ElevatedButton(onPressed: (){
                       if(Formkey.currentState!.validate()){
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text("Log in Success",
-                          style:TextStyle(color: Colors.red  ,) ,),
-                          
-                          
-                          ),
-                          );
                         print("Good Job!"); 
                       }
                     }, 
                     
-                    style:  ElevatedButton.styleFrom(backgroundColor: Colors.teal,padding: EdgeInsets.only(left: 150,right: 150,bottom: 15)),
+                    style:  ElevatedButton.styleFrom(backgroundColor: Colors.teal,padding: EdgeInsets.only(left: 150,right: 150,bottom: 20,top: 20)),
                     
-                    child: Text("LogIn" ,
-                    style: TextStyle(fontSize: 25 , fontWeight: FontWeight.bold,color: Colors.white),
+                    child: Text("Create Account" ,
+                    style: TextStyle(fontSize: 18.5 , fontWeight: FontWeight.bold,color: Colors.white),
                     ),
                     
                     ),
                     SizedBox(height: 10,),
                     TextButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> Signup()));
-
-                    }, child: Text("Don't Have Account? SignUp")),
-                    
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
+                    }, child: Text("Already Have Account? Login"))
                     
                   ],
                 ),
@@ -100,5 +103,6 @@ class Login extends StatelessWidget {
         ),
         
       );
+
   }
 }

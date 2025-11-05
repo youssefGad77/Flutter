@@ -10,6 +10,7 @@ class Countterr extends StatefulWidget {
 class _CountterrState extends State<Countterr> {
   int counter = 0;
   bool st = false;
+    
   void increment(){
     setState(() {
       counter++;
@@ -59,6 +60,8 @@ class _CountterrState extends State<Countterr> {
                   }, child: Icon(Icons.remove)),
                 ],
               ),
+              SizedBox(height: 20,),
+              
             ],
           ),
       ),

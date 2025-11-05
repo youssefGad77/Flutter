@@ -1,5 +1,9 @@
 import 'package:customwidget_formfiled/Custom_FormField.dart';
 import 'package:customwidget_formfiled/Login.dart';
+import 'package:customwidget_formfiled/RadioButton.dart';
+import 'package:customwidget_formfiled/Slider.dart';
+import 'package:customwidget_formfiled/TeamPoints.dart';
+import 'package:customwidget_formfiled/changebackground.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +19,7 @@ class MainApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Login(),
+      home: Teampoints(),
     );
   }
 }

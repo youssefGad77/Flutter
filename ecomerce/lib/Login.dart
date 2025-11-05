@@ -1,5 +1,6 @@
-import 'package:customwidget_formfiled/Custom_FormField.dart';
-import 'package:customwidget_formfiled/SignUp.dart';
+import 'package:ecomerce/HomePage.dart';
+import 'package:ecomerce/Signup.dart';
+import 'package:ecomerce/custom_form.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -73,8 +74,10 @@ class Login extends StatelessWidget {
                           
                           
                           ),
+                          
                           );
                         print("Good Job!"); 
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> Homepage()));
                       }
                     }, 
                     
