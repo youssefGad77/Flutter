@@ -41,7 +41,7 @@ class _ProductcartState extends State<Productcart> {
           ElevatedButton(
             onPressed: () {
               setState(() {
-                widget.product.quantity == 1;
+                widget.product.quantity += 1;
                 print(widget.product.quantity );
               });
             },

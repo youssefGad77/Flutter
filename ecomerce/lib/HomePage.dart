@@ -1,5 +1,6 @@
 import 'package:ecomerce/Cutom_Product.dart';
 import 'package:ecomerce/ProductModel.dart';
+import 'package:ecomerce/Shopping.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatefulWidget {
@@ -23,6 +24,11 @@ class _HomepageState extends State<Homepage> {
     return  Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
+        actions: [
+          IconButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>CartPage(products: products,)));
+          }, icon: Icon(Icons.shopping_cart))
+        ],
         title: Text("Shopping",style: TextStyle(color: Colors.white,fontSize: 20),),
         centerTitle: true,
       ) ,
