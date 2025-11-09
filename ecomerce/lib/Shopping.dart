@@ -89,7 +89,9 @@ class _CartPageState extends State<CartPage> {
                         ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              widget.products[index].quantity -= 1;
+                              if(widget.products[index].quantity > 0){
+                                widget.products[index].quantity -= 1;
+                              }
                             });
                           },
                           child: Icon(Icons.remove),
