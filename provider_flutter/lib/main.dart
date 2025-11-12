@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_flutter/Class_Swith.dart';
+import 'package:provider_flutter/Gesture_Class.dart';
 import 'package:provider_flutter/class_Name.dart';
 import 'package:provider_flutter/homepage.dart';
+import 'package:provider_flutter/newpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create:  (context)=>swi(),
+      create:  (context)=>gesture(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
           // tested with just a hot reload.
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: Homepage(),
+        home: newone(),
       ),
     );
   }
